@@ -21,6 +21,7 @@ Build transport and logistics platforms that improve operational clarity, reliab
 
 ## 🧭 High-Level Architecture
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 flowchart LR
   Users[Operators & Teams] --> Apps[Web + Mobile Clients]
   Apps --> Api[API & Service Gateway]
@@ -32,6 +33,7 @@ flowchart LR
 
 ## 🔁 Operational Flow (Abstract)
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 flowchart TD
   A[Request Created] --> B[Validation & Rules]
   B --> C{Approved?}
@@ -57,6 +59,7 @@ flowchart TD
 
 ## 🎨 Visual Overview
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 mindmap
   root((Al-Naqla))
     Platform
@@ -86,6 +89,7 @@ mindmap
 
 ## 🧭 Service Flow (Abstract)
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 sequenceDiagram
   participant User
   participant Client
@@ -126,6 +130,7 @@ sequenceDiagram
 
 ## 📊 Performance Signals (Illustrative)
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 pie title Signal Mix
   "On-time" : 45
   "Utilization" : 25
@@ -157,6 +162,7 @@ Create a unified logistics ecosystem where operations, insights, and execution s
 
 ## 🧭 Product Lifecycle (Abstract)
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 journey
   title Product Lifecycle
   section Discover
@@ -198,6 +204,7 @@ journey
 
 ## 🗺️ Roadmap (High-Level)
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 gantt
   title Roadmap Overview
   dateFormat  YYYY-MM-DD
@@ -234,6 +241,7 @@ gantt
 
 ## 🧭 Customer Journey (Abstract)
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 journey
   title Customer Journey
   section Onboard
