@@ -152,7 +152,8 @@ Create a unified logistics ecosystem where operations, insights, and execution s
 ## 🧭 Product Lifecycle (Abstract)
 ```mermaid
 flowchart LR
-  Discover[Discover] --> Build[Build] --> Operate[Operate]
+  Discover[Discover] --> Build[Build]
+  Build --> Operate[Operate]
   Discover --> Requirements[Requirements]
   Discover --> Roadmap[Roadmap]
   Build --> Architecture[Architecture]
@@ -190,7 +191,8 @@ flowchart LR
 ## 🗺️ Roadmap (High-Level)
 ```mermaid
 flowchart LR
-  Foundation[Foundation] --> Growth[Growth] --> Expansion[Expansion]
+  Foundation[Foundation] --> Growth[Growth]
+  Growth --> Expansion[Expansion]
   Foundation --> Hardening[Platform hardening]
   Growth --> Automation[Workflow automation]
   Expansion --> Scaling[Integrations scaling]
@@ -222,7 +224,8 @@ flowchart LR
 ## 🧭 Customer Journey (Abstract)
 ```mermaid
 flowchart LR
-  Onboard[Onboard] --> Operate[Operate] --> Optimize[Optimize]
+  Onboard[Onboard] --> Operate[Operate]
+  Operate --> Optimize[Optimize]
   Onboard --> Setup[Setup]
   Onboard --> Training[Training]
   Operate --> Daily[Daily workflows]
