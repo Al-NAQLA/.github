@@ -20,14 +20,28 @@ Build transport and logistics platforms that improve operational clarity, reliab
 ---
 
 ## 🧭 High-Level Architecture
-<div align="center">
-  <img alt="High-Level Architecture" src="https://quickchart.io/mermaid?theme=dark&chart=flowchart%20LR%0A%20%20Users%5BOperators%20%26%20Teams%5D%20--%3E%20Apps%5BWeb%20%2B%20Mobile%20Clients%5D%0A%20%20Apps%20--%3E%20Api%5BAPI%20%26%20Service%20Gateway%5D%0A%20%20Api%20--%3E%20Core%5BCore%20Domain%20Services%5D%0A%20%20Core%20--%3E%20Data%5BOperational%20Data%20Stores%5D%0A%20%20Core%20--%3E%20Insights%5BAnalytics%20%26%20Reporting%5D%0A%20%20Core%20--%3E%20Integrations%5BExternal%20Integrations%5D" />
-</div>
+```mermaid
+flowchart LR
+  Users[Operators and Teams] --> Apps[Web and Mobile Clients]
+  Apps --> ApiGateway[API Gateway]
+  ApiGateway --> CoreServices[Core Services]
+  CoreServices --> DataStores[Operational Data Stores]
+  CoreServices --> Insights[Analytics and Reporting]
+  CoreServices --> Integrations[External Integrations]
+```
 
 ## 🔁 Operational Flow (Abstract)
-<div align="center">
-  <img alt="Operational Flow" src="https://quickchart.io/mermaid?theme=dark&chart=flowchart%20TD%0A%20%20A%5BRequest%20Created%5D%20--%3E%20B%5BValidation%20%26%20Rules%5D%0A%20%20B%20--%3E%20C%7BApproved%3F%7D%0A%20%20C%20--%20Yes%20--%3E%20D%5BDispatch%20%26%20Execution%5D%0A%20%20C%20--%20No%20--%3E%20E%5BReview%20%26%20Adjustment%5D%0A%20%20D%20--%3E%20F%5BTracking%20%26%20Monitoring%5D%0A%20%20F%20--%3E%20G%5BCompletion%20%26%20Proof%5D%0A%20%20G%20--%3E%20H%5BReporting%20%26%20Insights%5D%0A%20%20E%20--%3E%20B" />
-</div>
+```mermaid
+flowchart TD
+  Request[Request Created] --> Validate[Validation and Rules]
+  Validate --> Decision{Approved}
+  Decision -->|Yes| Dispatch[Dispatch and Execution]
+  Decision -->|No| Review[Review and Adjustment]
+  Dispatch --> Track[Tracking and Monitoring]
+  Track --> Complete[Completion and Proof]
+  Complete --> Report[Reporting and Insights]
+  Review --> Validate
+```
 
 ---
 
@@ -42,9 +56,22 @@ Build transport and logistics platforms that improve operational clarity, reliab
 ---
 
 ## 🎨 Visual Overview
-<div align="center">
-  <img alt="Visual Overview" src="https://quickchart.io/mermaid?theme=dark&chart=flowchart%20TB%0A%20%20Root%5BAl-Naqla%5D%20--%3E%20Platform%5BPlatform%5D%0A%20%20Root%20--%3E%20Clients%5BClients%5D%0A%20%20Root%20--%3E%20Data%5BData%5D%0A%20%20Root%20--%3E%20Reliability%5BReliability%5D%0A%20%20Platform%20--%3E%20MultiTenant%5BMulti-tenant%5D%0A%20%20Platform%20--%3E%20CoreServices%5BCore%20services%5D%0A%20%20Clients%20--%3E%20Web%5BWeb%5D%0A%20%20Clients%20--%3E%20Mobile%5BMobile%5D%0A%20%20Clients%20--%3E%20Dashboards%5BDashboards%5D%0A%20%20Data%20--%3E%20Reporting%5BReporting%5D%0A%20%20Data%20--%3E%20Insights%5BInsights%5D%0A%20%20Reliability%20--%3E%20Monitoring%5BMonitoring%5D%0A%20%20Reliability%20--%3E%20SLOs%5BSLOs%5D" />
-</div>
+```mermaid
+flowchart TB
+  Root[Al Naqla] --> Platform[Platform]
+  Root --> Clients[Clients]
+  Root --> Data[Data]
+  Root --> Reliability[Reliability]
+  Platform --> MultiTenant[Multi tenant]
+  Platform --> CoreServices[Core services]
+  Clients --> Web[Web]
+  Clients --> Mobile[Mobile]
+  Clients --> Dashboards[Dashboards]
+  Data --> Reporting[Reporting]
+  Data --> Insights[Insights]
+  Reliability --> Monitoring[Monitoring]
+  Reliability --> SLOs[SLOs]
+```
 
 ---
 
@@ -57,9 +84,16 @@ Build transport and logistics platforms that improve operational clarity, reliab
 ---
 
 ## 🧭 Service Flow (Abstract)
-<div align="center">
-  <img alt="Service Flow" src="https://quickchart.io/mermaid?theme=dark&chart=sequenceDiagram%0A%20%20participant%20User%0A%20%20participant%20Client%0A%20%20participant%20API%0A%20%20participant%20Core%0A%20%20participant%20Data%0A%20%20User-%3E%3EClient%3A%20Request%20action%0A%20%20Client-%3E%3EAPI%3A%20Secure%20request%0A%20%20API-%3E%3ECore%3A%20Validate%20%2B%20process%0A%20%20Core-%3E%3EData%3A%20Read%2FWrite%0A%20%20Data--%3E%3ECore%3A%20Result%0A%20%20Core--%3E%3EAPI%3A%20Response%0A%20%20API--%3E%3EClient%3A%20Final%20response" />
-</div>
+```mermaid
+flowchart LR
+  User[User] --> Client[Client]
+  Client --> Api[API]
+  Api --> Core[Core]
+  Core --> Data[Data]
+  Data --> Core
+  Core --> Api
+  Api --> Client
+```
 
 ---
 
@@ -85,9 +119,13 @@ Build transport and logistics platforms that improve operational clarity, reliab
 ---
 
 ## 📊 Performance Signals (Illustrative)
-<div align="center">
-  <img alt="Performance Signals" src="https://quickchart.io/mermaid?theme=dark&chart=pie%20title%20Signal%20Mix%0A%20%20%22On-time%22%20%3A%2045%0A%20%20%22Utilization%22%20%3A%2025%0A%20%20%22Cost%22%20%3A%2015%0A%20%20%22Reliability%22%20%3A%2015" />
-</div>
+```mermaid
+flowchart LR
+  OnTime[On time 45%] --> Mix[Signal Mix]
+  Util[Utilization 25%] --> Mix
+  Cost[Cost 15%] --> Mix
+  Rel[Reliability 15%] --> Mix
+```
 
 ---
 
@@ -112,9 +150,16 @@ Create a unified logistics ecosystem where operations, insights, and execution s
 ---
 
 ## 🧭 Product Lifecycle (Abstract)
-<div align="center">
-  <img alt="Product Lifecycle" src="https://quickchart.io/mermaid?theme=dark&chart=flowchart%20LR%0A%20%20Discover%5BDiscover%5D%20--%3E%20Build%5BBuild%5D%0A%20%20Build%20--%3E%20Operate%5BOperate%5D%0A%20%20Discover%20--%3E%20Requirements%5BRequirements%5D%0A%20%20Discover%20--%3E%20Roadmap%5BRoadmap%5D%0A%20%20Build%20--%3E%20Architecture%5BArchitecture%5D%0A%20%20Build%20--%3E%20Delivery%5BDelivery%5D%0A%20%20Operate%20--%3E%20Observability%5BObservability%5D%0A%20%20Operate%20--%3E%20Optimization%5BOptimization%5D" />
-</div>
+```mermaid
+flowchart LR
+  Discover[Discover] --> Build[Build] --> Operate[Operate]
+  Discover --> Requirements[Requirements]
+  Discover --> Roadmap[Roadmap]
+  Build --> Architecture[Architecture]
+  Build --> Delivery[Delivery]
+  Operate --> Observability[Observability]
+  Operate --> Optimization[Optimization]
+```
 
 ---
 
@@ -143,9 +188,13 @@ Create a unified logistics ecosystem where operations, insights, and execution s
 ---
 
 ## 🗺️ Roadmap (High-Level)
-<div align="center">
-  <img alt="Roadmap" src="https://quickchart.io/mermaid?theme=dark&chart=gantt%0A%20%20title%20Roadmap%20Overview%0A%20%20dateFormat%20%20YYYY-MM-DD%0A%20%20section%20Foundation%0A%20%20Platform%20hardening%20%20%20%20%20%3Adone%2C%202025-01-01%2C%2045d%0A%20%20section%20Growth%0A%20%20Workflow%20automation%20%20%20%20%3Aactive%2C%202025-03-01%2C%2060d%0A%20%20section%20Expansion%0A%20%20Integrations%20scaling%20%20%20%3A%202025-05-15%2C%2045d" />
-</div>
+```mermaid
+flowchart LR
+  Foundation[Foundation] --> Growth[Growth] --> Expansion[Expansion]
+  Foundation --> Hardening[Platform hardening]
+  Growth --> Automation[Workflow automation]
+  Expansion --> Scaling[Integrations scaling]
+```
 
 ---
 
@@ -171,9 +220,16 @@ Create a unified logistics ecosystem where operations, insights, and execution s
 ---
 
 ## 🧭 Customer Journey (Abstract)
-<div align="center">
-  <img alt="Customer Journey" src="https://quickchart.io/mermaid?theme=dark&chart=flowchart%20LR%0A%20%20Onboard%5BOnboard%5D%20--%3E%20Operate%5BOperate%5D%20--%3E%20Optimize%5BOptimize%5D%0A%20%20Onboard%20--%3E%20Setup%5BSetup%5D%0A%20%20Onboard%20--%3E%20Training%5BTraining%5D%0A%20%20Operate%20--%3E%20Daily%5BDaily%20workflows%5D%0A%20%20Operate%20--%3E%20Exceptions%5BExceptions%5D%0A%20%20Optimize%20--%3E%20InsightsStage%5BInsights%5D%0A%20%20Optimize%20--%3E%20Improvement%5BContinuous%20improvement%5D" />
-</div>
+```mermaid
+flowchart LR
+  Onboard[Onboard] --> Operate[Operate] --> Optimize[Optimize]
+  Onboard --> Setup[Setup]
+  Onboard --> Training[Training]
+  Operate --> Daily[Daily workflows]
+  Operate --> Exceptions[Exceptions]
+  Optimize --> InsightsStage[Insights]
+  Optimize --> Improvement[Continuous improvement]
+```
 
 ---
 
