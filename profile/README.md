@@ -21,7 +21,6 @@ Build transport and logistics platforms that improve operational clarity, reliab
 
 ## 🧭 High-Level Architecture
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 flowchart LR
   Users[Operators & Teams] --> Apps[Web + Mobile Clients]
   Apps --> Api[API & Service Gateway]
@@ -33,7 +32,6 @@ flowchart LR
 
 ## 🔁 Operational Flow (Abstract)
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 flowchart TD
   A[Request Created] --> B[Validation & Rules]
   B --> C{Approved?}
@@ -59,22 +57,20 @@ flowchart TD
 
 ## 🎨 Visual Overview
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
-mindmap
-  root((Al-Naqla))
-    Platform
-      Multi-tenant
-      Core services
-    Clients
-      Web
-      Mobile
-      Dashboards
-    Data
-      Reporting
-      Insights
-    Reliability
-      Monitoring
-      SLOs
+flowchart TB
+  Root[Al-Naqla] --> Platform[Platform]
+  Root --> Clients[Clients]
+  Root --> Data[Data]
+  Root --> Reliability[Reliability]
+  Platform --> MultiTenant[Multi-tenant]
+  Platform --> CoreServices[Core services]
+  Clients --> Web[Web]
+  Clients --> Mobile[Mobile]
+  Clients --> Dashboards[Dashboards]
+  Data --> Reporting[Reporting]
+  Data --> Insights[Insights]
+  Reliability --> Monitoring[Monitoring]
+  Reliability --> SLOs[SLOs]
 ```
 
 ---
@@ -89,7 +85,6 @@ mindmap
 
 ## 🧭 Service Flow (Abstract)
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 sequenceDiagram
   participant User
   participant Client
@@ -130,7 +125,6 @@ sequenceDiagram
 
 ## 📊 Performance Signals (Illustrative)
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 pie title Signal Mix
   "On-time" : 45
   "Utilization" : 25
@@ -162,18 +156,15 @@ Create a unified logistics ecosystem where operations, insights, and execution s
 
 ## 🧭 Product Lifecycle (Abstract)
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
-journey
-  title Product Lifecycle
-  section Discover
-    Requirements: 5
-    Roadmap: 4
-  section Build
-    Architecture: 5
-    Delivery: 4
-  section Operate
-    Observability: 4
-    Optimization: 4
+flowchart LR
+  Discover[Discover] --> Build[Build]
+  Build --> Operate[Operate]
+  Discover --> Requirements[Requirements]
+  Discover --> Roadmap[Roadmap]
+  Build --> Architecture[Architecture]
+  Build --> Delivery[Delivery]
+  Operate --> Observability[Observability]
+  Operate --> Optimization[Optimization]
 ```
 
 ---
@@ -204,7 +195,6 @@ journey
 
 ## 🗺️ Roadmap (High-Level)
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
 gantt
   title Roadmap Overview
   dateFormat  YYYY-MM-DD
@@ -241,18 +231,14 @@ gantt
 
 ## 🧭 Customer Journey (Abstract)
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#E0F2FE", "primaryTextColor": "#0F172A", "primaryBorderColor": "#0284C7", "lineColor": "#38BDF8", "secondaryColor": "#EDE9FE", "tertiaryColor": "#FEF9C3", "background": "#FFFFFF"}}}%%
-journey
-  title Customer Journey
-  section Onboard
-    Setup: 4
-    Training: 3
-  section Operate
-    Daily workflows: 5
-    Exceptions: 4
-  section Optimize
-    Insights: 4
-    Continuous improvement: 4
+flowchart LR
+  Onboard[Onboard] --> Operate[Operate] --> Optimize[Optimize]
+  Onboard --> Setup[Setup]
+  Onboard --> Training[Training]
+  Operate --> Daily[Daily workflows]
+  Operate --> Exceptions[Exceptions]
+  Optimize --> InsightsStage[Insights]
+  Optimize --> Improvement[Continuous improvement]
 ```
 
 ---
