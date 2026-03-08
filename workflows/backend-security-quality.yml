@@ -1,0 +1,46 @@
+name: Backend Security Quality
+
+on:
+  pull_request:
+    paths:
+      - "AL_NAQLA_backend/**"
+      - "production_deployment/**"
+      - ".github/workflows/backend-security-quality.yml"
+  push:
+    branches: ["main", "master"]
+    paths:
+      - "AL_NAQLA_backend/**"
+      - "production_deployment/**"
+      - ".github/workflows/backend-security-quality.yml"
+
+jobs:
+  security-quality:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: AL_NAQLA_backend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, ctype, json, pdo, pdo_sqlite, sqlite3, tokenizer, xml, dom, fileinfo
+          coverage: none
+
+      - name: Install Composer Dependencies
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Prepare Test Environment
+        run: |
+          php -r "file_exists('.env') || copy('.env.example', '.env');"
+          php artisan key:generate --ansi
+
+      - name: Run Security Quality Gate
+        run: |
+          chmod +x scripts/security-quality-check.sh
+          RUN_TESTS=1 ./scripts/security-quality-check.sh
+
